@@ -35,5 +35,7 @@ class ExchangeRate(Model):
         related_name='rates_sold'
     )
     value = DecimalField(
+        decimal_places=2,
+        max_digits=10,
         help_text="Bought units for one sold unit."
     )

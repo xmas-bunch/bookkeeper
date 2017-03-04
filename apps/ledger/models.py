@@ -41,4 +41,7 @@ class Entry(Model):
     currency = ForeignKey(
         'currencies.Currency'
     )
-    value = DecimalField()
+    value = DecimalField(
+        decimal_places=2,
+        max_digits=10,
+    )
