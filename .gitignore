@@ -3,3 +3,6 @@
 
 # Bytecode
 __pycache__
+
+# Dev database
+/db.*
