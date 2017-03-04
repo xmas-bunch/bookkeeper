@@ -24,5 +24,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     # Main views
-    url(r'^accounts/$', list_accounts)
+    url(r'^accounts/$', list_accounts, name='accounts-list')
 ]

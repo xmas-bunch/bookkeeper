@@ -8,6 +8,7 @@ class Currency(Model):
     """
     Currency object.
     """
+    # Database fields
     name = CharField(
         max_length=100,
         help_text='Official name in home language.'
@@ -26,6 +27,7 @@ class ExchangeRate(Model):
     """
     Exchange rate between two currencies for a given timestamp.
     """
+    # Database fields
     bought_currency = ForeignKey(
         'Currency',
         related_name='rates_bought'

@@ -11,4 +11,5 @@ class OwnedEntity(Model):
     class Meta(object):
         abstract = True
 
+    # Database fields
     domain = ForeignKey('auth.Group')

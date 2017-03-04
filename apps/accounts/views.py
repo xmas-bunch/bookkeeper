@@ -1,12 +1,9 @@
 """
 Resource handlers for accounts application.
 """
-import json
+from django.http import JsonResponse
 
-from django.db.models import Sum
-from django.http import HttpResponse
-
-from .models import Account, Balance
+from .models import Account
 
 
 def list_accounts(request):
@@ -21,20 +18,11 @@ def list_accounts(request):
 
     # Build data for every account
     for account in Account.objects.all():
-        # Get the balance subtotals for the account
-        balances_subtotals = Balance.objects.filter(
-            account=account
-        ).group_by(
-            'currency'
-        ).annotate(
-            balance_subtotal=Sum('balance')
-        )
-
-        # Build balance data from subtotals
+        # Build balance data for account
         balance_data = [
-            {'currency': b.currency__symbol,
-             'balance': b.balance_subtotal}
-            for b in balances_subtotals
+            {'currency': b.currency.symbol,
+             'value': b.value}
+            for b in account.balances.all()
         ]
 
         # Append account data to result list
@@ -43,8 +31,5 @@ def list_accounts(request):
             'balances': balance_data
         })
 
-    # Serialize data as JSON string
-    response_content = json.dumps(data)
-
-    # Return response with content
-    return HttpResponse(response_content)
+    # Return JSON response with data
+    return JsonResponse({'count': len(data), 'objects': data})

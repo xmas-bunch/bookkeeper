@@ -11,6 +11,7 @@ class Transaction(OwnedEntity):
     Multiple operation involving two or more entries into different accounts
     or with different currencies.
     """
+    # Database fields
     summary = CharField(
         max_length=100,
         help_text='Short description of the operation.'
@@ -24,6 +25,7 @@ class Entry(Model):
     """
     Single operation on one account with one currency.
     """
+    # Database fields
     transaction = ForeignKey(
         'Transaction',
         related_name='entries'
