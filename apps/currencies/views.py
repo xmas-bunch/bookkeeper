@@ -16,7 +16,7 @@ def list_currencies(request):
     # Build all data at once using list comprehension
     data = [
         {'name': currency.name,
-         'short_name': str(currency),
+         'display': str(currency),
          'code': currency.code,
          'symbol': currency.symbol}
         for currency in Currency.objects.all()

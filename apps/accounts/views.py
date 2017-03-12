@@ -20,7 +20,8 @@ def list_accounts(request):
     for account in Account.objects.all():
         # Build balance data for account
         balance_data = [
-            {'currency': b.currency.symbol,
+            {'display': str(b),
+             'currency': b.currency.code,
              'value': b.value}
             for b in account.balances.all()
         ]
@@ -28,7 +29,7 @@ def list_accounts(request):
         # Append account data to result list
         data.append({
             'name': account.name,
-            'short_name': str(account),
+            'display': str(account),
             'balances': balance_data
         })
 
