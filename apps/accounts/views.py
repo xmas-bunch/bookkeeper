@@ -8,10 +8,10 @@ from .models import Account
 
 def list_accounts(request):
     """
-    Handler to return a list of accounts as JSON data.
+    Handler to return a list of accounts.
 
-    :param request: request sent by dispatcher
-    :return: rendered data
+    :param request: WSGI request
+    :return: JSONResponse with rendered data
     """
     # Start with empty list
     data = []
@@ -31,5 +31,5 @@ def list_accounts(request):
             'balances': balance_data
         })
 
-    # Return JSON response with data
+    # Return json response with data
     return JsonResponse({'count': len(data), 'objects': data})

@@ -1,5 +1,5 @@
 """
-Test cases for accounts.
+Test cases for accounts views.
 """
 import json
 

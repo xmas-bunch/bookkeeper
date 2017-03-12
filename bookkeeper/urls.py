@@ -17,6 +17,7 @@ from django.conf.urls import url
 from django.contrib import admin
 
 from apps.accounts.views import list_accounts
+from apps.currencies.views import list_currencies
 
 
 urlpatterns = [
@@ -24,5 +25,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     # Main views
-    url(r'^accounts/$', list_accounts, name='accounts-list')
+    url(r'^accounts/$', list_accounts, name='accounts-list'),
+    url(r'^currencies/$', list_currencies, name='currencies-list')
 ]
