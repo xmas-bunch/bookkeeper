@@ -1,0 +1,17 @@
+[run]
+branch = True
+source =
+    apps
+omit =
+    apps/*/migrations/*
+    apps/*/apps.py
+    apps/*/tests*
+
+[report]
+exclude_lines =
+    pragma: no cover
+    raise AssertionError
+    raise NotImplementedError
+
+[html]
+directory = coverage

@@ -1,0 +1,6 @@
+# Requirements for development environment
+
+-r prod.txt
+
+coverage==4.3
+factory-boy==2.8

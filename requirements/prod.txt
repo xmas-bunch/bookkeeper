@@ -1,0 +1,4 @@
+# Main requirements for the application
+
+django==1.10
+django-group-by==0.3

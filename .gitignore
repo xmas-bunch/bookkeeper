@@ -6,3 +6,7 @@ __pycache__
 
 # Dev database
 /db.*
+
+# Build/unit testing
+/.coverage
+/coverage
