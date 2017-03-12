@@ -20,6 +20,9 @@ class Transaction(OwnedEntity):
         help_text='Detailed description of the operation.'
     )
 
+    def __str__(self):
+        return self.summary
+
 
 class Entry(Model):
     """
@@ -47,3 +50,6 @@ class Entry(Model):
         decimal_places=2,
         max_digits=10,
     )
+
+    def __str__(self):
+        return '{} {} {}'.format(self.get_concept_display(), self.currency, self.value)

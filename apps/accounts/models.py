@@ -17,6 +17,9 @@ class Account(OwnedEntity):
         help_text="Descriptive title of the account."
     )
 
+    def __str__(self):
+        return self.name
+
 
 class Balance(Model):
     """
@@ -39,3 +42,6 @@ class Balance(Model):
         decimal_places=2,
         default=0
     )
+
+    def __str__(self):
+        return '{} {:.2f}'.format(self.currency, self.value)

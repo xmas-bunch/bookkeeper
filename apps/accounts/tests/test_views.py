@@ -45,9 +45,10 @@ class AccountsViewsTestCase(TestCase):
                 'count': 1,
                 'objects': [{
                     'name': ac.name,
+                    'display': str(ac),
                     'balances': [
-                        {'currency': 'AR$', 'value': '100.57'},
-                        {'currency': 'US$', 'value': '8.45'}
+                        {'currency': 'ARS', 'value': '100.57', 'display': 'ARS 100.57'},
+                        {'currency': 'USD', 'value': '8.45', 'display': 'USD 8.45'}
                     ]
                 }]
             }
