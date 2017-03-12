@@ -44,6 +44,7 @@ class CurrenciesViewsTestCase(TestCase):
                 'count': 2,
                 'objects': [
                     {'name': c.name,
+                     'short_name': str(c),
                      'symbol': c.symbol,
                      'code': c.code}
                     for c in Currency.objects.all()

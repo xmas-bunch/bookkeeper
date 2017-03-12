@@ -28,6 +28,7 @@ def list_accounts(request):
         # Append account data to result list
         data.append({
             'name': account.name,
+            'short_name': str(account),
             'balances': balance_data
         })
 

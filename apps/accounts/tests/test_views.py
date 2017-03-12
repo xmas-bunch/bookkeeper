@@ -45,6 +45,7 @@ class AccountsViewsTestCase(TestCase):
                 'count': 1,
                 'objects': [{
                     'name': ac.name,
+                    'short_name': str(ac),
                     'balances': [
                         {'currency': 'AR$', 'value': '100.57'},
                         {'currency': 'US$', 'value': '8.45'}
